@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+body {
+  background-color: #f0fff0;
+}
+h1 {
+  text-align: center;
+  font-size: 48px;
+  padding: 20px;
+  background-color: #ffe0d8;
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+p, label {
+  padding: 10px;
+}
+
+.result {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 32px;
+  padding: 40px;
+}
+
+.guess {
+  text-align: center;
+  padding-bottom: 40px;
+  width: 40%;
+  margin: auto;
+  border: 1px dashed #ffe0d8;
+}
+.guess label {
+  display: block;
+  margin: auto;
+  padding-bottom: 20px;
+}
+.guess input {
+  margin: auto;
+  border
+}
+.left {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding-top: 20px;
+}
+.resetGame {
+  width: 24%;
+  background-color: red;
+}
+.resetGame input {
+  display: inline;
+  width: 15%;
+  color: red;
+}
