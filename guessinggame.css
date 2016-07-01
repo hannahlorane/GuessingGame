@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  font-weight: normal;
 }
 body {
   background-color: #f0fff0;
@@ -27,30 +26,28 @@ p, label {
 
 .guess {
   text-align: center;
-  padding-bottom: 1em;
+  padding: 0 1em 0 1em;
   width: 40%;
   margin: auto;
-  border: 1px dashed #ffe0d8;
+  border: 2px dashed #ffe0d8;
 }
 .guess label[for="number"] {
   display: block;
   margin: auto;
   padding-bottom: 20px;
 }
+.guess input[type="text"] {
+  margin: auto;
+  margin-bottom: 1.5em;
+  color: darkgreen;
+}
 .guess label[for="submit"] {
   display: inline-block;
-  width: 50%;
-  background-color: red;
-  position: relative;
 }
 .guess input[type="button"] {
   display: inline;
   width: 1em;
   height: 1em;
-}
-.guess input[type="text"] {
-  margin: auto;
-  margin-bottom: 1.5em;
 }
 .left {
   text-align: center;
@@ -59,8 +56,11 @@ p, label {
   padding-top: 20px;
 }
 .resetGame {
-  width: 24%;
-  border: 1px dashed #ffe0d8;
+  width: 9.4em;
+  border: 2px dashed #ffe0d8;
+  padding-left: 0em;
+  margin-left: 1em;
+  margin-top: 1em;
 }
 .resetGame input {
   display: inline;
