@@ -27,19 +27,30 @@ p, label {
 
 .guess {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 1em;
   width: 40%;
   margin: auto;
   border: 1px dashed #ffe0d8;
 }
-.guess label {
+.guess label[for="number"] {
   display: block;
   margin: auto;
   padding-bottom: 20px;
 }
-.guess input {
+.guess label[for="submit"] {
+  display: inline-block;
+  width: 50%;
+  background-color: red;
+  position: relative;
+}
+.guess input[type="button"] {
+  display: inline;
+  width: 1em;
+  height: 1em;
+}
+.guess input[type="text"] {
   margin: auto;
-  border
+  margin-bottom: 1.5em;
 }
 .left {
   text-align: center;
@@ -49,10 +60,10 @@ p, label {
 }
 .resetGame {
   width: 24%;
-  background-color: red;
+  border: 1px dashed #ffe0d8;
 }
 .resetGame input {
   display: inline;
-  width: 15%;
-  color: red;
+  width: 1em;
+  height: 1em;
 }
