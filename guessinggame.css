@@ -72,7 +72,7 @@ p, label {
   width: 1em;
   height: 1em;
 }
-.hintText {
+#hintText {
   text-align: center;
   margin-top: 1.3em;
   display: none;

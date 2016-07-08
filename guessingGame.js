@@ -80,6 +80,21 @@ function playAgain(){
 	// add code here
 }
 
+/* If there are two or fewer guesses left, hint gives
+   the decade of the winning number; otherwise, it picks
+   a random number between 1-10 and tells the user whether
+   the winning number is divisible by it */
+function generateHint() {
+  if (guessesArray[0] < 3) {
+    var h = "The number is between ";
+    h += 10 * Math.floor(winningNumber/10);
+    h += " and ";
+    h += 10 * (Math.floor(winningNumber/10) + 1);
+    return h;
+  }
+  else {return "this is totally a hint"}
+}
+
 
 /* **** Event Listeners/Handlers ****  */
 
@@ -95,5 +110,7 @@ function playerGuessSubmission() {
 function provideHint(){
 	//TODO
   console.log("hinted!"); // DELENDUM
-  var hintText = $(.hinttext);
+  var hintText = $('#hintText');
+  hintText.text(generateHint());
+  hintText.show();
 }
