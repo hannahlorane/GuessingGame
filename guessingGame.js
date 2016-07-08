@@ -77,7 +77,7 @@ function checkGuess(){
 
 // Allow the "Player" to Play Again
 function playAgain(){
-	// add code here
+	location.reload();
 }
 
 /* If there are two or fewer guesses left, hint gives
@@ -89,10 +89,17 @@ function generateHint() {
     var h = "The number is between ";
     h += 10 * Math.floor(winningNumber/10);
     h += " and ";
-    h += 10 * (Math.floor(winningNumber/10) + 1);
-    return h;
+    h += 10 * (Math.floor(winningNumber/10)) + 9;
   }
-  else {return "this is totally a hint"}
+  else {
+    var n = Math.floor(Math.random()*10 + 1);
+    var divisBool = winningNumber % n === 0;
+    var h = "The number is ";
+    h += (divisBool) ? "" : "not";
+    h += " divisible by ";
+    h += n;
+  }
+  return h;
 }
 
 
@@ -108,8 +115,6 @@ function playerGuessSubmission() {
 
 // Create a provide hint button that provides additional clues to the "Player"
 function provideHint(){
-	//TODO
-  console.log("hinted!"); // DELENDUM
   var hintText = $('#hintText');
   hintText.text(generateHint());
   hintText.show();
