@@ -11,13 +11,13 @@
     </h1>
   </body>
   <div class="result">
-    <p>You are cold</p>
-    <p>Aim higher</p>
+    <p>Make a Guess!</p>
+    <p>Which specific random number is secretly a Bridge to the Overman?</p>
   </div>
   <div class="guess">
     <form>
       <label for="number">Guess a Number between One and One Hundred</label>
-      <input type="text" id="number">
+      <input type="text" onkeypress='handleKeyPress(event)' id="number">
     </form>
     <div class="submit">
       <form>

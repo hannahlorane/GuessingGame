@@ -54,8 +54,9 @@ function updateTemperature () {
 
 // Ends the game, once the player has used up his or her guesses
 // or has won the game
-function gameOver(won) { // TODO
-  //Makes all of the buttons stop working
+function gameOver(won) { //
+  // TODO Make all of the buttons stop working
+  // TODO hide hint text
   if (won) {gameWon();}
   else {gameLost();}
 }
@@ -63,10 +64,16 @@ function gameOver(won) { // TODO
 function gameWon() {
   console.log("Game won function called");
   $('.left p').hide();
+  // TODO background picture
+  // TODO temp message
+  // TODO direction message
 }
 
 function gameLost() {
   $('.left p').text("You are out of guesses!");
+  // TODO background picture
+  // TODO temp message
+  // TODO direction message
 }
 
 // Check if the Player's Guess is the winning number
@@ -128,6 +135,13 @@ function playerGuessSubmission() {
   console.log(playerGuess); //DELENDUM
   document.getElementById('number').value = '';
   checkGuess();
+}
+
+function handleKeyPress(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    playerGuessSubmission();
+  }
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
