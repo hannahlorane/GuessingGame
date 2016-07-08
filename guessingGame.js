@@ -49,16 +49,23 @@ function updateTemperature () {
 }
 
 // Ends the game, once the player has used up his or her guesses
-function gameOver() {
+// or has won the game
+function gameOver(won) { // TODO
+  //Makes all of the buttons stop working
+  if (won) {gameWon();}
+  else {gameLost();}
+}
+
+function gameWon() {
+  //TODO
+}
+
+function gameLost() {
   //TODO
 }
 
 // Check if the Player's Guess is the winning number
-
 function checkGuess(){
-  lowerOrHigher();
-  updateTemperature();
-
   if (guessesArray[playerGuess] === true) {
     // this number has already been guessed
     $('.left').find('p:first-child').text("You already guessed that!" + "\n" + "You still have "
@@ -71,7 +78,11 @@ function checkGuess(){
     $('.left').find('p').text("You have " + guessesArray[0] + " guesses left");
   }
   // if the user has exhausted all of her guesses, the game is over
-  if (guessesArray[0] === 0) {gameOver();}
+  if (guessesArray[0] === 0) {gameOver(false);}
+  else {
+    lowerOrHigher();
+    updateTemperature();
+  }
 }
 
 
