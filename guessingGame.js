@@ -24,17 +24,20 @@ function playerGuessSubmission() {
   console.log(playerGuess); //DELENDUM
   document.getElementById('number').value = '';
   checkGuess();
+  lowerOrHigher(); //DELENDUM
 }
 
 // Determine if the next guess should be a lower or higher number
 
 function lowerOrHigher(){
-	//TODO
+  if (winningNumber > playerGuess) {var direction = "high";}
+  else {var direction = "low";}
+  $('.result p:last-child').text("Aim " + direction + "er");
 }
 
 // Determines how far the player's guess is from the winning number
 // and displays the appropriate message
-function hotOrCold () {
+function updateTemperature () {
     //TODO
 }
 
