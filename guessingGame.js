@@ -17,15 +17,6 @@ function generateWinningNumber(){
 winningNumber = generateWinningNumber();
 console.log(winningNumber); //DELENDUM
 
-// Fetch the Player's Guess
-
-function playerGuessSubmission() {
-  playerGuess = +document.getElementById('number').value;
-  console.log(playerGuess); //DELENDUM
-  document.getElementById('number').value = '';
-  checkGuess();
-}
-
 // Determine if the next guess should be a lower or higher number
 
 function lowerOrHigher(){
@@ -83,18 +74,26 @@ function checkGuess(){
   if (guessesArray[0] === 0) {gameOver();}
 }
 
-// Create a provide hint button that provides additional clues to the "Player"
-
-function provideHint(){
-	// add code here
-  console.log("hinted!");
-}
 
 // Allow the "Player" to Play Again
-
 function playAgain(){
 	// add code here
 }
 
 
 /* **** Event Listeners/Handlers ****  */
+
+// Fetch the Player's Guess
+function playerGuessSubmission() {
+  playerGuess = +document.getElementById('number').value;
+  console.log(playerGuess); //DELENDUM
+  document.getElementById('number').value = '';
+  checkGuess();
+}
+
+// Create a provide hint button that provides additional clues to the "Player"
+function provideHint(){
+	//TODO
+  console.log("hinted!"); // DELENDUM
+  var hintText = $(.hinttext);
+}

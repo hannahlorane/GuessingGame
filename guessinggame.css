@@ -55,7 +55,30 @@ p, label {
   margin: auto;
   padding-top: 20px;
 }
+.hint {
+  display: inline-block;
+  float: right;
+  padding-right: 0em;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+.hint label[for="hint"] {
+  display: inline-block;
+  margin-left: auto;
+  margin-bottom: auto;
+}
+.hint input[type="button"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.hintText {
+  text-align: center;
+  margin-top: 1.3em;
+  display: none;
+}
 .resetGame {
+  display: inline-block;
   width: 9.4em;
   border: 2px dashed #ffe0d8;
   padding-left: 0em;
