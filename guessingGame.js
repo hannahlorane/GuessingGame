@@ -22,13 +22,18 @@ console.log(winningNumber); //DELENDUM
 function lowerOrHigher(){
   var heightAffiche = $('.result p:last-child');
   if (winningNumber === playerGuess) {heightAffiche.css({"display" : "none"});}
-  else if (winningNumber > playerGuess) {heightAffiche.text("Aim heigher");}
-  else {heightAffiche.text("Aim lower");}
+  else if (winningNumber > playerGuess) {heightAffiche.text("Aim Higher");}
+  else {heightAffiche.text("Aim Lower");}
 }
 
 // Determines how far the player's guess is from the winning number
 // and displays the appropriate message
 function updateTemperature () {
+  var tempAffiche = $('.result p:first-child');
+  if (playerGuess > 100 || playerGuess < 1) {
+    tempAffiche.text("Out of Range!");
+    return;
+  }
   var breakpoints = [0, 2, 5, 10, 30, 50, 75, 100];
   var tempDictionary = {100 : "Absolutely freezing",
                         75 : "Very cold",
@@ -38,7 +43,6 @@ function updateTemperature () {
                         5 : "Very warm",
                         2 : "Super duper warm",
                         0 : "Congratulations! You won the Game!"};
-  var tempAffiche = $('.result p:first-child');
   var diff = Math.abs(playerGuess - winningNumber);
   for (var i = 0; i < breakpoints.length; i++) {
     if (diff <= breakpoints[i]) {
@@ -57,16 +61,18 @@ function gameOver(won) { // TODO
 }
 
 function gameWon() {
-  //TODO
+  console.log("Game won function called");
+  $('.left p').hide();
 }
 
 function gameLost() {
-  //TODO
+  $('.left p').text("You are out of guesses!");
 }
 
 // Check if the Player's Guess is the winning number
 function checkGuess(){
-  if (guessesArray[playerGuess] === true) {
+  if (playerGuess === winningNumber) {gameOver(true);}
+  else if (guessesArray[playerGuess] === true) {
     // this number has already been guessed
     $('.left').find('p:first-child').text("You already guessed that!" + "\n" + "You still have "
                           + guessesArray[0] + " guesses left");

@@ -5,6 +5,11 @@
 body {
   background-color: #f0fff0;
 }
+input[type='button']{
+  background-color: #ffe0d8;
+  width: 1em;
+  height: 1em;
+}
 h1 {
   text-align: center;
   font-size: 48px;
@@ -20,10 +25,15 @@ p, label {
 .result {
   text-align: center;
   margin-top: 10px;
-  font-size: 32px;
   padding: 40px;
 }
-
+.result p:first-child {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+.result p:last-child {
+  font-size: 24px;
+}
 .guess {
   text-align: center;
   padding: 0 1em 0 1em;
@@ -46,8 +56,6 @@ p, label {
 }
 .guess input[type="button"] {
   display: inline;
-  width: 1em;
-  height: 1em;
 }
 .left {
   text-align: center;
@@ -69,8 +77,6 @@ p, label {
 }
 .hint input[type="button"] {
   display: inline-block;
-  width: 1em;
-  height: 1em;
 }
 #hintText {
   text-align: center;
@@ -87,6 +93,4 @@ p, label {
 }
 .resetGame input {
   display: inline;
-  width: 1em;
-  height: 1em;
 }
