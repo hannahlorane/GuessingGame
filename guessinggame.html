@@ -2,6 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="guessinggame.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="guessingGame.js"></script>
   </head>
   <body>
     <h1>
@@ -19,7 +21,7 @@
     <div class="submit">
       <form>
         <label for="submit">Submit Guess:</label>
-        <input type="button" id="submit">
+        <input type="button" onclick='playersGuessSubmission()' id="submit">
       </form>
     </div>
   </div>

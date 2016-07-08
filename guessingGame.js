@@ -4,20 +4,23 @@
 var playersGuess,
     winningNumber
 
-
-
 /* **** Guessing Game Functions **** */
 
 // Generate the Winning Number
 
 function generateWinningNumber(){
-	// add code here
+	return 1 + Math.floor(100*Math.random());
 }
+
+winningNumber = generateWinningNumber();
+
 
 // Fetch the Players Guess
 
-function playersGuessSubmission(){
-	// add code here
+function playersGuessSubmission() {
+  var playerGuess = +document.getElementById('number').value;
+  console.log(playerGuess); //DELENDUM
+  document.getElementById('number').value = '';
 }
 
 // Determine if the next guess should be a lower or higher number
@@ -26,7 +29,7 @@ function lowerOrHigher(){
 	// add code here
 }
 
-// Check if the Player's Guess is the winning number 
+// Check if the Player's Guess is the winning number
 
 function checkGuess(){
 	// add code here
@@ -46,4 +49,3 @@ function playAgain(){
 
 
 /* **** Event Listeners/Handlers ****  */
-
