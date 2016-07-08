@@ -24,21 +24,37 @@ function playerGuessSubmission() {
   console.log(playerGuess); //DELENDUM
   document.getElementById('number').value = '';
   checkGuess();
-  lowerOrHigher(); //DELENDUM
 }
 
 // Determine if the next guess should be a lower or higher number
 
 function lowerOrHigher(){
-  if (winningNumber > playerGuess) {var direction = "high";}
-  else {var direction = "low";}
-  $('.result p:last-child').text("Aim " + direction + "er");
+  var heightAffiche = $('.result p:last-child');
+  if (winningNumber === playerGuess) {heightAffiche.css({"display" : "none"});}
+  else if (winningNumber > playerGuess) {heightAffiche.text("Aim heigher");}
+  else {heightAffiche.text("Aim lower");}
 }
 
 // Determines how far the player's guess is from the winning number
 // and displays the appropriate message
 function updateTemperature () {
-    //TODO
+  var breakpoints = [0, 2, 5, 10, 30, 50, 75, 100];
+  var tempDictionary = {100 : "Absolutely freezing",
+                        75 : "Very cold",
+                        50 : "Cold",
+                        30 : "Lukewarm",
+                        10 : "Warm",
+                        5 : "Very warm",
+                        2 : "Super duper warm",
+                        0 : "Congratulations! You won the Game!"};
+  var tempAffiche = $('.result p:first-child');
+  var diff = Math.abs(playerGuess - winningNumber);
+  for (var i = 0; i < breakpoints.length; i++) {
+    if (diff <= breakpoints[i]) {
+      tempAffiche.text(tempDictionary[breakpoints[i]]);
+      break;
+    }
+  }
 }
 
 // Ends the game, once the player has used up his or her guesses
@@ -48,14 +64,17 @@ function gameOver() {
 
 // Check if the Player's Guess is the winning number
 
-function checkGuess(){
-  if (playerGuess === winningNumber) {
+function checkGuess(){ // A lot of this functionality can go in the lowerorhigher and temp functions
+  /*if (playerGuess === winningNumber) {
     $('.result').find('p').text("Congratulations! You won the Game!");
   }
-  else {
+  else { */
+  lowerOrHigher();
+  updateTemperature();
+
     if (guessesArray[playerGuess] === true) {
       // this number has already been guessed
-      $('.left').find('p').text("You already guessed that!" + "\n" + "You still have "
+      $('.left').find('p:first-child').text("You already guessed that!" + "\n" + "You still have "
                             + guessesArray[0] + " guesses left");
     }
     else {
@@ -66,7 +85,7 @@ function checkGuess(){
       if (guessesArray[0] === 0) {gameOver();}
       // tell player to try again / respond to the guess
     }
-  }
+  //}
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
