@@ -64,34 +64,30 @@ function gameOver() {
 
 // Check if the Player's Guess is the winning number
 
-function checkGuess(){ // A lot of this functionality can go in the lowerorhigher and temp functions
-  /*if (playerGuess === winningNumber) {
-    $('.result').find('p').text("Congratulations! You won the Game!");
-  }
-  else { */
+function checkGuess(){
   lowerOrHigher();
   updateTemperature();
 
-    if (guessesArray[playerGuess] === true) {
-      // this number has already been guessed
-      $('.left').find('p:first-child').text("You already guessed that!" + "\n" + "You still have "
-                            + guessesArray[0] + " guesses left");
-    }
-    else {
-      // this is a brand new guess
-      guessesArray[playerGuess] = true;
-      guessesArray[0]--;
-      $('.left').find('p').text("You have " + guessesArray[0] + " guesses left");
-      if (guessesArray[0] === 0) {gameOver();}
-      // tell player to try again / respond to the guess
-    }
-  //}
+  if (guessesArray[playerGuess] === true) {
+    // this number has already been guessed
+    $('.left').find('p:first-child').text("You already guessed that!" + "\n" + "You still have "
+                          + guessesArray[0] + " guesses left");
+  }
+  else {
+    // this is a brand new guess
+    guessesArray[playerGuess] = true;
+    guessesArray[0]--;
+    $('.left').find('p').text("You have " + guessesArray[0] + " guesses left");
+  }
+  // if the user has exhausted all of her guesses, the game is over
+  if (guessesArray[0] === 0) {gameOver();}
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
 
 function provideHint(){
 	// add code here
+  console.log("hinted!");
 }
 
 // Allow the "Player" to Play Again
