@@ -19,7 +19,6 @@ $(document).ready(function() {
   console.log(winningNumber); //DELENDUM
 
   // Determine if the next guess should be a lower or higher number
-
   function lowerOrHigher(){
     var heightAffiche = $('.result p:last-child');
     if (winningNumber === playerGuess) {heightAffiche.css({"display" : "none"});}
@@ -64,13 +63,16 @@ $(document).ready(function() {
     $('#number').on('keypress', supressEnter);
     $('#hint').off('click', provideHint);
 
+    $('.guess').hide();
+    $('.hint').hide();
+    $('.left p').hide();
+
     // specializes into gameWon or gameLost
     if (won) {gameWon();}
     else {gameLost();}
   }
 
   function gameWon() {
-    $('.left p').hide();
     $('.result p:first-child').text("Congratulations! You Won the Game!");
     $('.result p:last-child').text("But you're still not the Overman");
     var purpleBorder = function (element) {
@@ -81,7 +83,9 @@ $(document).ready(function() {
     purpleBorder($('h1'));
     purpleBorder($('body'));
     purpleBorder($('.resetGame'));
-    purpleBorder($('.guess'));
+    $('.result').css({'border':'thick double purple',
+                     'background-color': '#ffddff'});
+
   }
 
   function gameLost() {
@@ -89,8 +93,8 @@ $(document).ready(function() {
     $('body').css(
       {'background-image' : 'url("nietzsche.jpg")',
        'background-repeat' : 'no-repeat',
-       'background-position' : 'center',
-       'webkit-text-stroke' : '.3px #ffe0d8'});
+       'background-position' : 'center'});
+    $('.result').css({"padding-top": "40em"});
     $('.result p:first-child').text("You lost the game!");
     $('.result p:last-child').text("But at least you still have the Will to Power!");
   }
@@ -172,6 +176,8 @@ $(document).ready(function() {
 
   // Allows the "Player" to Play Again
   function playAgain(){
+    $('#number').off('keypress', supressEnter);
+    $('#number').on('keypress', handleKeyPress);
   	location.reload();
   }
 
