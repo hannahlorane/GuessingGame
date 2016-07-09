@@ -61,6 +61,7 @@ $(document).ready(function() {
     // turn off buttons aside from the resent button
     $('#submit').off('click', playerGuessSubmission);
     $('#number').off('keypress', handleKeyPress);
+    $('#number').on('keypress', supressEnter);
     $('#hint').off('click', provideHint);
 
     // specializes into gameWon or gameLost
@@ -156,6 +157,14 @@ $(document).ready(function() {
     if (e.key === "Enter") {
       e.preventDefault();
       playerGuessSubmission();
+    }
+  }
+
+  /* Event handler that prevents the enter key from reseting the game
+     and does nothing else */
+  function supressEnter(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
     }
   }
 
