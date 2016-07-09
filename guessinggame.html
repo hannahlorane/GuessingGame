@@ -12,17 +12,17 @@
   </body>
   <div class="result">
     <p>Make a Guess!</p>
-    <p>Which specific random number is secretly a Bridge to the Overman?</p>
+    <p>Which random number is secretly a Bridge to the Overman?</p>
   </div>
   <div class="guess">
     <form>
       <label for="number">Guess a Number between One and One Hundred</label>
-      <input type="text" onkeypress='handleKeyPress(event)' id="number">
+      <input type="text" id="number">
     </form>
     <div class="submit">
       <form>
         <label for="submit">Submit Guess:</label>
-        <input type="button" onclick='playerGuessSubmission()' id="submit">
+        <input type="button" id="submit">
       </form>
     </div>
   </div>
@@ -32,12 +32,12 @@
   <div class="resetGame">
     <form>
       <label for="reset">Reset the Game:</label>
-      <input type="button" onclick='playAgain()' id="reset">
+      <input type="button" id="reset">
     </form>
   </div>
   <div class="hint">
     <form>
-      <input type="button" onclick='provideHint()' id="hint">
+      <input type="button" id="hint">
       <label for="hint">Give me a hint!</label>
     </form>
   </div>
